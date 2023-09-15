@@ -58,6 +58,7 @@ export class ListHeroesComponent implements OnInit {
       return !aux.indexOf(value.toLowerCase());
     })
     this.allCharacters = filter
+    console.log(this.allCharacters)
   }
 
   onTableDataChange(event: any) {

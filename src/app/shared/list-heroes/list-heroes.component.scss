@@ -4,6 +4,7 @@ table {
   margin-top: 34px;
   border-collapse: collapse;
   width: 100%;
+  margin-left: 2px;
 }​
 
 table tr:last-child { 
@@ -71,6 +72,13 @@ span {
 .pagination-center {
   display: flex;
   justify-content: center;
+}
+
+.not-found{
+  text-align: center;
+  font-size: 35px;
+  font-style: italic;
+  font-weight: 300;
 }
 
 @media (max-width: 768px) {

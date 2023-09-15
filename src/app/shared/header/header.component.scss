@@ -3,7 +3,9 @@
 header{
   display: flex;
   justify-content: space-between;
-  color: var(--primary-color)
+  color: var(--primary-color);
+  margin-top: -16px;
+  margin-bottom: 3px;
 }
 u {
   font-weight: 900;
