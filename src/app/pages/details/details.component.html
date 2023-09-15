@@ -1,0 +1,45 @@
+<div class="center" style="margin-top: 25px;">
+  <button class="button" [routerLink]="['']">Voltar</button>
+</div>
+
+<!-- Main -->
+<div id="main">
+  <div class="title">
+    <h1>{{this.detailsCharacters[0].name}}</h1>
+  </div>
+  <div class="description">
+    <p *ngIf="this.detailsCharacters[0].description == ''">Sorry! This character does not have a description</p>
+    <p>{{this.detailsCharacters[0].description}}</p>
+  </div>
+  <div class="inner">
+    <h2 class="sub-title">Events</h2>
+    <section class="tiles">
+      <article class="style1" *ngFor="let item of this.detailsEvents">
+        <span class="image">
+          <img [src]="item.status.thumbnail.path + '.' + item.status.thumbnail.extension" [alt]="item.nameCharacter" />
+        </span>
+        <div class="content">
+          <p>{{item.status.description}}</p>
+        </div>
+      </article>
+
+    </section>
+    <p class="description" *ngIf="this.detailsEvents.length == 0">Sorry! This character has no Marvel events</p>
+  </div>
+
+  <div class="inner">
+    <h2 class="sub-title">Series</h2>
+    <section class="tiles">
+      <article class="style1" *ngFor="let item of this.detailsSeries">
+        <span class="image">
+          <img [src]="item.status.thumbnail.path + '.' + item.status.thumbnail.extension" [alt]="item.nameCharacter" />
+        </span>
+        <div class="content">
+          <p>{{item.status.description}}</p>
+          <p *ngIf="item.status.description == null">{{item.name}}</p>
+        </div>
+      </article>
+    </section>
+    <p class="description" *ngIf="this.detailsSeries.length == 0">Sorry! This character has no Marvel series</p>
+  </div>
+</div>

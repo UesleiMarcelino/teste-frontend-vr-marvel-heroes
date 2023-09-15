@@ -1,0 +1,28 @@
+@import "../../../config-scss/variables.scss";
+
+header{
+  display: flex;
+  justify-content: space-between;
+  color: var(--primary-color)
+}
+u {
+  font-weight: 900;
+}
+
+.text_light {
+  font-weight: 400;
+}
+
+@media (max-width: 768px) {
+.hide {
+  display: none;
+}
+header {
+  display: flex;
+  justify-content: center;
+}
+h1 {
+  font-size: 16px;
+}
+}
+

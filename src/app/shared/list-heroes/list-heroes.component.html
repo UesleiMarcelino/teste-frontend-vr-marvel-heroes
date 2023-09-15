@@ -1,0 +1,52 @@
+<app-search (emmitSearched)="search($event)"></app-search>
+
+<div *ngIf="this.isLoading" class="spinner"></div>
+<div *ngIf="this.isLoading == false">
+<table>
+  <thead>
+    <tr>
+      <th class="espaco">Personagem</th>
+      <th class="hide">Séries</th>
+      <th class="hide">Eventos</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let item of allCharacters | paginate
+    : {
+        itemsPerPage: tableSize,
+        currentPage: page,
+        totalItems: count
+      };
+let i = index" [routerLink]="['details', item.id]">
+      <td>
+        <img [src]="item.thumbnail" [alt]="item.nameCharacter" />
+        <span>{{item.nameCharacter}}</span>
+      </td>
+      <td class="hide">
+        <ul>
+          <li *ngIf="item.series.length == 0"> - </li>
+          <li>{{item.series[0]}}</li>
+          <li>{{item.series[1]}}</li>
+          <li>{{item.series[2]}}</li>
+        </ul>
+      </td>
+      <td class="hide">
+        <ul>
+          <li *ngIf="item.events.length == 0"> - </li>
+          <li>{{item.events[0]}}</li>
+          <li>{{item.events[1]}}</li>
+          <li>{{item.events[2]}}</li>
+        </ul>
+      </td>
+
+    </tr>
+  </tbody>
+</table>
+
+<div class="pagination-center">
+  <pagination-controls class="my-pagination center" previousLabel="Prev" nextLabel="Next"
+    (pageChange)="onTableDataChange($event)">
+  </pagination-controls>
+</div>
+
+</div>

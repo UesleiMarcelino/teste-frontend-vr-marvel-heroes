@@ -1,0 +1,99 @@
+@import "../../../config-scss/variables.scss";
+
+table {
+  margin-top: 34px;
+  border-collapse: collapse;
+  width: 100%;
+}​
+
+table tr:last-child { 
+    border-collapse: separate;
+}
+
+th {
+  padding: 5px 0; 
+  border-right: 10px solid #efefef;
+}
+ th:last-child {
+  border-right: 0;
+}
+
+td, th {
+  text-align: left;
+  padding: 10px;
+}
+
+li {
+  list-style-type: none;
+}
+
+th {
+background-color: var(--primary-color);
+color: white;
+font-weight: 300;
+}
+
+tr {
+  border-collapse: collapse;
+  border-bottom: 1px solid  rgba(212, 32, 38, 0.3);
+  margin: 8px;
+}
+
+tr:hover {
+  background-color: rgba(212, 32, 38, 0.1);
+  width: 100%
+}
+
+img {
+  width: 58px;
+  height: 58px;
+  border-radius: 50%;
+  vertical-align:middle; text-align:center;
+}
+
+span {
+  margin: 0 25px;
+}
+.espaco {
+  margin: 0 8px;
+}
+
+.my-pagination ::ng-deep .ngx-pagination .current {
+  background-color: var(--primary-color);
+  border-radius: 25px;
+}
+
+.my-pagination ::ng-deep .ngx-pagination a {
+  color: var(--primary-color);
+
+}
+
+.pagination-center {
+  display: flex;
+  justify-content: center;
+}
+
+@media (max-width: 768px) {
+	.hide{
+    display: none;
+  }
+}
+
+.spinner {
+   width: 18rem;
+   height: 18rem;
+   border-radius: 50%;
+   border: 11.5px solid;
+   border-color: #dbdcef;
+   border-right-color: #d42026;
+   animation: spinner-d3wgkg 0.8s infinite linear;
+   margin: 0 auto;
+   margin-top: 15rem;
+}
+
+@keyframes spinner-d3wgkg {
+   to {
+      transform: rotate(1turn);
+   }
+}
+
